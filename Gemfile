@@ -19,7 +19,7 @@ group :development, :test do
   gem 'byebug'
   gem 'capybara', '2.9.2'
   gem 'rspec-rails', '~> 3.5'
-  gem 'factory_girl', '4.7.0'
+  gem 'factory_girl_rails', '4.5.0'
 end
 
 group :test do

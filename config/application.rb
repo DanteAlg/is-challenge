@@ -7,7 +7,7 @@ Bundler.require(*Rails.groups)
 module IsChallenge
   class Application < Rails::Application
     config.generators do |g|
-        g.factory_girl false
+      g.factory_girl false
     end
 
     config.time_zone = ENV.fetch('TZ', 'Brasilia')

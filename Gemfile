@@ -22,6 +22,13 @@ group :development, :test do
   gem 'factory_girl', '4.7.0'
 end
 
+group :test do
+  gem 'shoulda-matchers',     '2.5.0', require: false
+  gem 'simplecov',            '0.11.1', require: false
+  gem 'capybara',             '2.9.2'
+  gem 'database_cleaner',     '1.5.1'
+end
+
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'

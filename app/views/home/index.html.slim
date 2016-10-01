@@ -1,2 +1,13 @@
 = link_to 'Criar estudante', new_student_path
 = link_to 'Criar Curso', new_course_path
+
+table
+  tr
+    th Nome
+    th Decription
+    th Status
+  - @courses.each do |course|
+    tr
+      td= course.name
+      td= course.description
+      td= course.status_humanize

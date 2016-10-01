@@ -56,5 +56,20 @@
 
   &__students {
     @include span-columns(10);
+
+    table {
+      border-collapse: collapse;
+
+      th, td {
+        border-bottom: 1px solid #cecfd5;
+        padding: 10px 15px;
+      }
+
+      th { font-weight: bold; }
+
+      tfoot tr:last-child td {
+        border-bottom: 0;
+      }
+    }
   }
 }

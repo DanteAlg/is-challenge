@@ -14,14 +14,16 @@ div(class="card activity-#{course.status}")
   .card__students
     - if course.classrooms.any?
       table
-        tr
-          th= Student.human_attribute_name(:name)
-          th= Student.human_attribute_name(:register_number)
-          th= Student.human_attribute_name(:status)
-          th= Classroom.human_attribute_name(:entry_at)
-        - course.classrooms.each do |classroom|
+        thead
           tr
-            td= classroom.student.name
-            td= classroom.student.register_number
-            td= classroom.student.status_humanize
-            td= l(classroom.entry_at, format: :short)
+            th= Student.human_attribute_name(:name)
+            th= Student.human_attribute_name(:register_number)
+            th= Student.human_attribute_name(:status)
+            th= Classroom.human_attribute_name(:entry_at)
+        tbody
+          - course.classrooms.each do |classroom|
+            tr
+              td= classroom.student.name
+              td= classroom.student.register_number
+              td= classroom.student.status_humanize
+              td= l(classroom.entry_at, format: :short)

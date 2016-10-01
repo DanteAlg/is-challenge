@@ -16,6 +16,8 @@ gem 'enumerate_it', '1.3.1'
 gem 'responders', '2.3.0'
 gem 'simple_form', '3.2.0'
 
+gem 'font-awesome-rails', '4.6.3.1'
+
 group :development, :test do
   gem 'byebug'
   gem 'capybara', '2.9.2'

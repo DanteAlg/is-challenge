@@ -1,0 +1,27 @@
+label {
+  display: block;
+  margin-bottom: 5px;
+
+  abbr {
+    display: none;
+  }
+}
+
+input {
+  border-radius: 5px;
+  padding: 5px; 
+  margin-bottom: 10px;
+
+  &[type='submit'] {
+    color: $white;
+    background: $blue;
+    margin-top: 20px;
+  }
+}
+
+select {
+  color: $white;
+  background: $blue;
+  padding: 5;
+  border-radius: 5px;
+}

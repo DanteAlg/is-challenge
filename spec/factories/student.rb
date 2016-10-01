@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :student do
     name 'Foo'
-    register_number '123456'
+    sequence :register_number
     status 1
   end
 end

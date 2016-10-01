@@ -1,0 +1,31 @@
+.card {
+  position: relative;
+  margin-top: 100px;
+  border: 2px solid $blue;
+  border-radius: 0 10px 10px;
+  padding: 10px;
+
+  &.activity-1 {
+    h2 {
+      background: $blue;
+    }
+  }
+
+  &.activity-2 {
+    h2 {
+      background: $red;
+    }
+  }
+
+  h2 {
+    border: 2px solid $blue;
+    border-radius: 10px 10px 0 0;
+    font-size: 1.3rem;
+    top: -40px;
+    left: -2px;
+    color: $white;
+    padding: 7px 13px;
+    display: inline-box;
+    position: absolute;
+  }
+}

@@ -1,23 +1,15 @@
 .card {
+  @include outer-container;
+
   position: relative;
   margin-top: 100px;
   border: 2px solid $blue;
   border-radius: 0 10px 10px;
   padding: 10px;
-
-  &.activity-1 {
-    h2 {
-      background: $blue;
-    }
-  }
-
-  &.activity-2 {
-    h2 {
-      background: $red;
-    }
-  }
+  display: block;
 
   h2 {
+    background: $blue;
     border: 2px solid $blue;
     border-radius: 10px 10px 0 0;
     font-size: 1.3rem;
@@ -27,5 +19,42 @@
     padding: 7px 13px;
     display: inline-box;
     position: absolute;
+
+    .card__title-status {
+      color: $white;
+      font-size: .8rem;
+      margin-left: 10px;
+      font-weight: bold;
+      display: inline-block;
+      padding: 5px;
+      border-radius: 10px;
+      margin-bottom: -1px;
+    }
+  }
+
+  &.activity-1 {
+    .card__title-status {
+      background: $green;
+    }
+  }
+
+  &.activity-2 {
+    .card__title-status {
+      background: $red;
+    }
+  }
+
+  &__info-description {
+    @include span-columns(5 of 10);
+  }
+
+  &__add-student {
+    @include span-columns(5 of 10);
+    margin-right: 0;
+    text-align: right;
+  }
+
+  &__students {
+    @include span-columns(10);
   }
 }

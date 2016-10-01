@@ -1,24 +1,27 @@
 div(class="card activity-#{course.status}")
   h2.card__title
     = course.name
-  p.card__description
+    span.card__title-status
+      = course.status_humanize
+  p.card__info-description
     = course.description
 
   .card__add-student
     = simple_form_for :classroom, url: add_student_course_path(course), method: :put do |f|
       = f.input :student_id, collection: students, label: false, include_blank: false
-      = f.submit 'Adicionar'
+      = f.submit 'Adicionar aluno'
 
-  - if course.classrooms.any?
-    table
-      tr
-        th Nome
-        th Registro
-        th Status
-        th Hora de entrada
-      - course.classrooms.each do |classroom|
+  .card__students
+    - if course.classrooms.any?
+      table
         tr
-          td= classroom.student.name
-          td= classroom.student.register_number
-          td= classroom.student.status_humanize
-          td= l(classroom.entry_at, format: :short)
+          th Nome
+          th Registro
+          th Status
+          th Hora de entrada
+        - course.classrooms.each do |classroom|
+          tr
+            td= classroom.student.name
+            td= classroom.student.register_number
+            td= classroom.student.status_humanize
+            td= l(classroom.entry_at, format: :short)

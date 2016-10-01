@@ -13,9 +13,15 @@ html
           = fa_icon 'graduation-cap', class: 'header__title-icon'
           | IS Challenge
       .header__links
-        = link_to 'Inicio', root_path
-        = link_to 'Criar estudante', new_student_path
-        = link_to 'Criar Curso', new_course_path
+        = link_to root_path do
+          = fa_icon 'home'
+          |Inicio
+        = link_to new_student_path
+          = fa_icon 'child'
+          |Criar Estudante
+        = link_to new_course_path
+          = fa_icon 'file'
+          |Criar Curso
 
     .container
       = yield

@@ -12,5 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.mask.min
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function(){
+  $('#student_register_number').mask('0000000000');
+});

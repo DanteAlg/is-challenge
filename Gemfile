@@ -14,6 +14,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'slim-rails', '3.1.1'
 gem 'enumerate_it', '1.3.1'
 gem 'responders', '2.3.0'
+gem 'simple_form', '3.2.0'
 
 group :development, :test do
   gem 'byebug'

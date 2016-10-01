@@ -7,5 +7,15 @@ html
     = csrf_meta_tags
 
   body
+    header
+      h1.header__title
+        = link_to root_path, class: 'header__title-link' do
+          = fa_icon 'graduation-cap', class: 'header__title-icon'
+          | IS Challenge
+      .header__links
+        = link_to 'Inicio', root_path
+        = link_to 'Criar estudante', new_student_path
+        = link_to 'Criar Curso', new_course_path
 
-    = yield
+    .container
+      = yield

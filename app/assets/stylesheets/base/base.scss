@@ -1,0 +1,8 @@
+@import 'reset';
+@import 'vaiables';
+@import 'grid-settings';
+@import 'header';
+
+.container {
+  @include outer-container;
+}

@@ -11,17 +11,17 @@ html
       h1.header__title
         = link_to root_path, class: 'header__title-link' do
           = fa_icon 'graduation-cap', class: 'header__title-icon'
-          | IS Challenge
+          = t('application.title')
       .header__links
         = link_to root_path do
           = fa_icon 'home'
-          |Inicio
+          = t('application.header.home')
         = link_to new_student_path
           = fa_icon 'child'
-          |Criar Estudante
+          = t('application.header.create_student')
         = link_to new_course_path
           = fa_icon 'file'
-          |Criar Curso
+          = t('application.header.create_course')
 
     .container
       = yield

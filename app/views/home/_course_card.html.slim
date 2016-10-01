@@ -9,16 +9,16 @@ div(class="card activity-#{course.status}")
   .card__add-student
     = simple_form_for :classroom, url: add_student_course_path(course), method: :put do |f|
       = f.input :student_id, collection: students, label: false, include_blank: false
-      = f.submit 'Adicionar aluno'
+      = f.submit t('home.course_card.add_student')
 
   .card__students
     - if course.classrooms.any?
       table
         tr
-          th Nome
-          th Registro
-          th Status
-          th Hora de entrada
+          th= Student.human_attribute_name(:name)
+          th= Student.human_attribute_name(:register_number)
+          th= Student.human_attribute_name(:status)
+          th= Classroom.human_attribute_name(:entry_at)
         - course.classrooms.each do |classroom|
           tr
             td= classroom.student.name

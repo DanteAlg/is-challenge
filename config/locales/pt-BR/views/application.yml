@@ -1,0 +1,7 @@
+pt-BR:
+  application:
+    title: IS challenge
+    header: 
+      home: Inicio
+      create_student: Criar estudante
+      create_course: Criar curso

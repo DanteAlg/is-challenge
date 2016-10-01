@@ -3,6 +3,6 @@ class HomeController < ApplicationController
 
   def index
     @students = Student.all
-    @courses = Course.all
+    @courses = Course.all.includes(:classrooms)
   end
 end

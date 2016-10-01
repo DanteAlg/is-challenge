@@ -17,6 +17,8 @@ gem 'responders', '2.3.0'
 gem 'simple_form', '3.2.0'
 
 gem 'font-awesome-rails', '4.6.3.1'
+gem 'neat', '1.8.0'
+gem 'bourbon', '4.2.7'
 
 group :development, :test do
   gem 'byebug'

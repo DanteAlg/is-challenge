@@ -1,0 +1,18 @@
+language: ruby
+sudo: false
+cache: bundler
+bundler_args: --without development production
+addons:
+  postgresql: 9.3
+rvm:
+  - 2.1.2
+before_deploy:
+  - gem install mime-types -v 2.6.2
+before_script:
+  - cp config/database.sample.yml config/database.yml
+  - bundle exec rake db:create db:migrate
+script:
+  - bundle exec rspec
+addons:
+  code_climate:
+    repo_token: ea4f0438426811e191680e8b39f02f865811a132235e5da144d399f1a2b1c837

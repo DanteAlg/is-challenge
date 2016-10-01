@@ -32,6 +32,7 @@ group :test do
   gem 'simplecov',            '0.11.1', require: false
   gem 'capybara',             '2.9.2'
   gem 'database_cleaner',     '1.5.1'
+  gem 'codeclimate-test-reporter', require: false
 end
 
 group :development do

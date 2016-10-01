@@ -3,6 +3,8 @@ class Classroom < ActiveRecord::Base
   belongs_to :course
   before_create :set_entry_at
 
+  validates_presence_of :student, :course
+
   private
 
   def set_entry_at

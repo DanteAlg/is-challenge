@@ -7,4 +7,8 @@ class Course < ActiveRecord::Base
 
   has_enumeration_for :status, with: ActivityStatus,
                       create_helpers: { prefix: true }
+
+  def add_student(student_id)
+    classrooms.find_or_create_by(student_id: student_id)
+  end
 end

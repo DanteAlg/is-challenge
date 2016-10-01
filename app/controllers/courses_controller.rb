@@ -11,9 +11,16 @@ class CoursesController < ApplicationController
     respond_with @course, location: root_path
   end
 
+  def add_student
+    @course = Course.find(params[:id])
+    @course.add_student(params[:classroom][:student_id])
+    respond_with @course, location: root_path
+  end
+
   private
 
   def course_params
-    params.require(:course).permit(:name, :description, :status)
+    params.require(:course).permit(:name, :description, :status,
+                                   classrooms_attributes: [:id, :student_id])
   end
 end

@@ -37,4 +37,13 @@ RSpec.describe CoursesController, type: :controller do
       end
     end
   end
+
+  describe '#add_student' do
+    let!(:student) { create(:student) }
+    let(:course) { create(:course) }
+
+    subject(:add_student) { put :add_student, id: course.id, classroom: { student_id: student.id }}
+
+    it { expect{ add_student }.to change(Classroom, :count).by(1) }
+  end
 end
